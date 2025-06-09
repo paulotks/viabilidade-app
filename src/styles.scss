@@ -1,20 +1,33 @@
 @use '@angular/material' as mat;
 
-
-html, body {
-  height: 100%;
-}
-
+html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: var(--mat-sys-background);
+}
+
+p {
+  font: var(--mat-sys-body-large);
+}
+
+label {
+  font: var(--mat-sys-label-large);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-  color-scheme: light dark;
   @include mat.theme((
-    color: mat.$violet-palette,
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$rose-palette,
+    ),
     typography: Roboto,
-    density: 0
+    density: 0,
   ));
 }
