@@ -5,7 +5,7 @@
       (drop)="onDrop($event)"
       (dragover)="onDragOver($event)"
       (dragleave)="onDragLeave($event)"
-      [class.dragover]="isDragOver"
+      [class.dragover]="isDragOver()"
     >
       <mat-icon>cloud</mat-icon>
       <p>Arraste e solte o arquivo aqui ou</p>
@@ -23,11 +23,13 @@
       />
     </div>
 
-    <div *ngIf="fileName" class="file-name">
-      <mat-icon>insert_drive_file</mat-icon>
-      {{ fileName }}
-    </div>
 
+    @if(fileName()) {
+      <div class="file-name">
+        <mat-icon>insert_drive_file</mat-icon>
+        {{ fileName() }}
+      </div>
+    }
   </div>
 
 </app-layout>

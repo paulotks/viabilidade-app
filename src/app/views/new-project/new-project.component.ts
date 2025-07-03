@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {LayoutComponent} from '@components/layout/layout.component';
 import {MatIcon, MatIconModule} from '@angular/material/icon';
@@ -14,22 +14,22 @@ import {MatButtonModule} from '@angular/material/button';
 export class NewProjectComponent {
   constructor() {}
 
-  isDragOver = false;
-  fileName: string | null = null;
+  protected isDragOver = signal<boolean>(false);
+  protected fileName = signal<string | null>(null);
 
-  onDragOver(event: DragEvent) {
+  protected onDragOver(event: DragEvent) {
     event.preventDefault();
-    this.isDragOver = true;
+    this.isDragOver.set(true);
   }
 
-  onDragLeave(event: DragEvent) {
+  protected onDragLeave(event: DragEvent) {
     event.preventDefault();
-    this.isDragOver = false;
+    this.isDragOver.set(false);
   }
 
-  onDrop(event: DragEvent) {
+  protected onDrop(event: DragEvent) {
     event.preventDefault();
-    this.isDragOver = false;
+    this.isDragOver.set(false);
 
     const files = event.dataTransfer?.files;
     if (files && files.length > 0) {
@@ -37,14 +37,14 @@ export class NewProjectComponent {
     }
   }
 
-  onFileSelected(event: Event) {
+  protected onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
       this.processFile(input.files[0]);
     }
   }
 
-  processFile(file: File) {
+  protected processFile(file: File) {
     const validTypes = [
       'application/vnd.ms-excel',
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
@@ -58,7 +58,7 @@ export class NewProjectComponent {
       return;
     }
 
-    this.fileName = file.name;
+    this.fileName.set(file.name)
 
     // Aqui você pode enviar o arquivo para um service ou API
     console.log('Arquivo recebido:', file);
