@@ -2,7 +2,7 @@
 
 :host {
   .upload-container {
-    border: 2px dashed var(--mat-sys-on-secondary);
+    border: 2px dashed var(--mat-sys-on-primary);
     padding: 4rem;
     text-align: center;
     cursor: pointer;
@@ -20,12 +20,12 @@
       height: 100%;
       margin: 0;
       font-size: 4rem;
-      color: var(--mat-sys-on-secondary);
+      color: var(--mat-sys-on-primary);
     }
 
     p {
       margin: 0.2rem 0 1rem 0;
-      color: var(--mat-sys-on-secondary);
+      color: var(--mat-sys-on-primary);
     }
 
   }

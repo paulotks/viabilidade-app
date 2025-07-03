@@ -20,12 +20,12 @@
     z-index: 1000;
 
     @include mat.toolbar-overrides((
-      container-background-color: var(--mat-sys-secondary),
-      container-text-color: var(--mat-sys-on-secondary),
+      container-background-color: var(--mat-sys-primary),
+      container-text-color: var(--mat-sys-on-primary),
     ));
 
     @include mat.icon-overrides((
-      color: var(--mat-sys-on-secondary),
+      color: var(--mat-sys-on-primary),
     ));
 
 
@@ -43,12 +43,12 @@
 
   .sidenav-container {
     @include mat.sidenav-overrides((
-      container-background-color: var(--mat-sys-secondary),
-      container-text-color: var(--mat-sys-on-secondary),
+      container-background-color: var(--mat-sys-primary),
+      container-text-color: var(--mat-sys-on-primary),
     ));
 
     @include mat.icon-overrides((
-      color: var(--mat-sys-on-secondary),
+      color: var(--mat-sys-on-primary),
     ));
 
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
@@ -79,7 +79,7 @@
         align-items: center;
         align-content: center;
         gap: 1rem;
-        color: var(--mat-sys-on-secondary);
+        color: var(--mat-sys-on-primary);
 
         mat-icon {
           margin-left: 0.4rem;

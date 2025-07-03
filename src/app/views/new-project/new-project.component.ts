@@ -44,7 +44,7 @@ export class NewProjectComponent {
     }
   }
 
-  protected processFile(file: File) {
+  private processFile(file: File) {
     const validTypes = [
       'application/vnd.ms-excel',
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
@@ -57,6 +57,8 @@ export class NewProjectComponent {
       alert('Formato inválido. Apenas arquivos Excel são permitidos.');
       return;
     }
+
+    debugger;
 
     this.fileName.set(file.name)
 

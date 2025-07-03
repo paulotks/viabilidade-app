@@ -24,7 +24,7 @@ label {
   @include mat.theme((
     color: (
       theme-type: light,
-      primary: mat.$cyan-palette,
+      primary: mat.$azure-palette,
       tertiary: mat.$rose-palette,
     ),
     typography: Roboto,
