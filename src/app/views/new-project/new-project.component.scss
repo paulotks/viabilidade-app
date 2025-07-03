@@ -1,0 +1,43 @@
+@use '@angular/material' as mat;
+
+:host {
+  .upload-container {
+    border: 2px dashed #ccc;
+    padding: 32px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: var(--mat-sys-outline);
+    transition: background-color 0.2s;
+    margin: 2rem 2rem;
+
+    &.dragover {
+      background-color: var(--mat-sys-outline-variant);
+    }
+
+    mat-icon {
+      //font-size: 2rem;
+      color: var(--mat-sys-on-secondary);
+    }
+
+    p {
+      margin: 16px 0;
+      color: var(--mat-sys-on-secondary);
+    }
+
+  }
+
+  .file-name {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    font-weight: 500;
+
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+
+
+}
+

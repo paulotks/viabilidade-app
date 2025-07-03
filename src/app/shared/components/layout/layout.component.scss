@@ -92,6 +92,7 @@
       }
     }
     mat-sidenav-content {
+      padding-top: 0.5rem;
       display: flex;
       flex-direction: column;
       min-height: calc(100vh - 2rem); /* Altura da viewport menos a altura da toolbar */
